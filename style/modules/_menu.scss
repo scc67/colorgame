@@ -1,0 +1,16 @@
+.menu {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+    
+    &__button {
+        &--selected {
+            background-color: Blue;
+        }
+
+        &--none {
+            display: none;
+        }
+    }
+}
