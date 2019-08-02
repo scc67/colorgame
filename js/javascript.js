@@ -43,36 +43,6 @@ function reset() {
     header.style.backgroundColor = "steelblue"
 }
 
-// onderstaande regels gebruiken voor de minder efficiente manier
-// easyButton.addEventListener("click", function() {
-//     easyButton.classList.add("menu__button--selected");    
-//     hardButton.classList.remove("menu__button--selected"); 
-//     numSquares = 3;
-//     colors = generateRandomColors(numSquares);
-//     pickedColor = pickColor();
-//     colorDisplay.textContent = pickedColor;
-//     for(i = 0;i < squares.length; i++) {
-//         if(colors[i]) {
-//             squares[i].style.backgroundColor = colors[i];
-//         } else {
-//             squares[i].classList.add("menu__button--none");
-//         }
-//     } 
-// });
-
-// hardButton.addEventListener("click", function() {
-//     hardButton.classList.add("menu__button--selected");    
-//     easyButton.classList.remove("menu__button--selected");
-//     numSquares = 6
-//     colors = generateRandomColors(numSquares);
-//     pickedColor = pickColor();
-//     colorDisplay.textContent = pickedColor;
-//     for(i = 0;i < squares.length; i++) {
-//             squares[i].style.backgroundColor = colors[i];
-//             squares[i].classList.remove("menu__button--none");
-//     }     
-// });
-
 resetButton.addEventListener("click", function(){
     reset();
 })
