@@ -1,3 +1,15 @@
 .header {
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.2;
     color: white;
+    background: steelblue;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 20px 0;
+
+    &__color-display {
+        font-size: 200%;
+        
+    }
 }

@@ -2,15 +2,35 @@
     background-color: white;
     height: 30px;
     text-align: center;
-    color: black;
+
+    &__message {
+        display: inline-block;
+        width: 20%;
+    }
     
     &__button {
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        height: 100%;
+        font-weight: 700;
+        color: steelblue;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        outline: none;
+
         &--selected {
-            background-color: Blue;
+            background-color: steelBlue;
+            color: white;
         }
 
         &--none {
             display: none;
+        }
+
+        &:hover {
+            color: white;
+            background: steelblue;
         }
     }
 }

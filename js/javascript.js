@@ -7,39 +7,24 @@ var colorDisplay = document.querySelector(".js-color-display");
 var messageDisplay = document.querySelector(".js-message")
 var header = document.querySelector(".header");
 var resetButton = document.querySelector(".js-reset");
-var easyButton = document.querySelector(".js-easy");
-var hardButton = document.querySelector(".js-hard");
+// Onderstaande regels alleen als je de minder efficiente manier doe
+// var easyButton = document.querySelector(".js-easy");
+// var hardButton = document.querySelector(".js-hard");
+var modeButtons = document.querySelectorAll(".js-mode");
 
-easyButton.addEventListener("click", function() {
-    easyButton.classList.add("menu__button--selected");    
-    hardButton.classList.remove("menu__button--selected"); 
-    numSquares = 3;
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(i = 0;i < squares.length; i++) {
-        if(colors[i]) {
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-            squares[i].classList.add("menu__button--none");
-        }
-    } 
-});
+for(i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function() {
+        modeButtons[0].classList.remove("menu__button--selected");
+        modeButtons[1].classList.remove("menu__button--selected");
+        this.classList.add("menu__button--selected");
+        this.textContent === "Easy" ? numSquares = 3: numSquares = 6 ;
+        reset();
+    });
+}
 
-hardButton.addEventListener("click", function() {
-    hardButton.classList.add("menu__button--selected");    
-    easyButton.classList.remove("menu__button--selected");
-    numSquares = 6
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(i = 0;i < squares.length; i++) {
-            squares[i].style.backgroundColor = colors[i];
-            squares[i].classList.remove("menu__button--none");
-    }     
-});
-
-resetButton.addEventListener("click", function(){
+function reset() {
+    resetButton.textContent = "New Color";
+    messageDisplay.textContent = "";
     //generate all new colors
     colors = generateRandomColors(numSquares);
     //pick new color
@@ -48,9 +33,48 @@ resetButton.addEventListener("click", function(){
     colorDisplay.textContent = pickedColor;
     //change color of squares
     for(i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-    }
-    header.style.backgroundColor = "#232323"
+        if(colors[i]) {
+            squares[i].classList.remove("menu__button--none")
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].classList.add("menu__button--none");
+        }
+    } 
+    header.style.backgroundColor = "steelblue"
+}
+
+// onderstaande regels gebruiken voor de minder efficiente manier
+// easyButton.addEventListener("click", function() {
+//     easyButton.classList.add("menu__button--selected");    
+//     hardButton.classList.remove("menu__button--selected"); 
+//     numSquares = 3;
+//     colors = generateRandomColors(numSquares);
+//     pickedColor = pickColor();
+//     colorDisplay.textContent = pickedColor;
+//     for(i = 0;i < squares.length; i++) {
+//         if(colors[i]) {
+//             squares[i].style.backgroundColor = colors[i];
+//         } else {
+//             squares[i].classList.add("menu__button--none");
+//         }
+//     } 
+// });
+
+// hardButton.addEventListener("click", function() {
+//     hardButton.classList.add("menu__button--selected");    
+//     easyButton.classList.remove("menu__button--selected");
+//     numSquares = 6
+//     colors = generateRandomColors(numSquares);
+//     pickedColor = pickColor();
+//     colorDisplay.textContent = pickedColor;
+//     for(i = 0;i < squares.length; i++) {
+//             squares[i].style.backgroundColor = colors[i];
+//             squares[i].classList.remove("menu__button--none");
+//     }     
+// });
+
+resetButton.addEventListener("click", function(){
+    reset();
 })
 colorDisplay.textContent = pickedColor;
 

@@ -9,23 +9,33 @@
     <title>Color Game</title>
 </head>
 <body>
-    <h1 class="header">The Great <span class="js-color-display">RGB</span> Color Game</h1>
+    <header>
+            <h1 class="header">The Great
+            <br>
+            <span class="js-color-display header__color-display">RGB</span>
+            <br>
+            Color Game</h1>
+    </header>
+    
 
-    <div class="menu">
+    <nav class="menu">
         <button class="js-reset menu__button">New Colors</button>
         <span class="js-message menu__message"></span>
-        <button class="js-easy menu__button">Easy</button>
-        <button class="js-hard menu__button menu__button--selected">Hard</button>
-    </div>
+        <!-- Onderstaande regels gelden als je de minder effeciente manier doe -->
+        <!-- <button class="js-easy menu__button">Easy</button>
+        <button class="js-hard menu__button menu__button--selected">Hard</button> -->
+        <button class="js-mode menu__button">Easy</button>
+        <button class="js-mode menu__button menu__button--selected">Hard</button>
+    </nav>
 
-    <div class="squares">
+    <section class="squares">
         <div class="squares__square"></div>
         <div class="squares__square"></div>
         <div class="squares__square"></div>
         <div class="squares__square"></div>
         <div class="squares__square"></div>
         <div class="squares__square"></div>
-    </div>
+    </section>
     <script src="js/javascript.js"></script>
 </body>
 </html>
